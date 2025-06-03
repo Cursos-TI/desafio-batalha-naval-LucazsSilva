@@ -23,15 +23,27 @@ int main() {
     }
     printf("\n");
 
-    // Posiciona navio diagonal principal
-    for (int i = 0; i < 3; i++) {
-        tabuleiro[i][i - 2] = 3;
+
+    // diagonal principal
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (i == j) {
+                tabuleiro[i][j] = 3;
+            }
+        }
     }
 
-    // Posiciona navio diagonal inversa
-    for (int i = 0; i < 3; i++) {
-        tabuleiro[i][i - 6] = 3;
+    // diagonal secundaria
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (i + j == 9) {
+                tabuleiro[i][j] = 3;
+            }
+        }
     }
+
+
+
 
     // Exibe o tabuleiro
     for (int i = 0; i < 10; i++) {
